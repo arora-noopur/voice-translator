@@ -1,6 +1,10 @@
 # To call watsonx's LLM, we need to import the library of IBM Watson Machine Learning
 from ibm_watson_machine_learning.foundation_models.utils.enums import ModelTypes
 from ibm_watson_machine_learning.foundation_models import Model
+# Define the model parameters
+from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
+from ibm_watson_machine_learning.foundation_models.utils.enums import DecodingMethods
+import requests
 
 # placeholder for Watsonx_API and Project_id incase you need to use the code outside this environment
 # API_KEY = "Your WatsonX API"
@@ -14,10 +18,6 @@ credentials = {
 
 # Specify model_id that will be used for inferencing
 model_id = "mistralai/mistral-medium-2505"
-
-# Define the model parameters
-from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
-from ibm_watson_machine_learning.foundation_models.utils.enums import DecodingMethods
 
 parameters = {
     GenParams.DECODING_METHOD: DecodingMethods.GREEDY,
